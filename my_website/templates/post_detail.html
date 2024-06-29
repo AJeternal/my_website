@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div id="clock"></div>
+        <div id="date"></div>
+    </header>
+    <nav>
+        <a href="{{ url_for('posts') }}">Back to Posts</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    <main>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+        <p>By {{ post.author }} on {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+    </main>
+</body>
+</html>
